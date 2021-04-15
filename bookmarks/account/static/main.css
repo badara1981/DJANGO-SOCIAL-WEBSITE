@@ -1,0 +1,20 @@
+body {
+    background-color: antiquewhite;
+}
+
+input[type=text], input[type=password], input[type=submit] {
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    background-color: greenyellow;
+    text-transform: uppercase;
+    color: black
+}
+
+input[type=submit]:hover {
+    opacity: 0.5;
+}
+

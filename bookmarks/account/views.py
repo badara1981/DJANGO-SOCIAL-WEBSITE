@@ -18,4 +18,4 @@ def user_login(request):
                 return HttpResponse('Dissabled account')
             return HttpResponse('Invalid login')
     form = LoginForm()
-    return render(request, 'account/login.html', {'form': form})
+    return render(request, 'account/login.html', {'form': form, 'title': 'Login Page'})
