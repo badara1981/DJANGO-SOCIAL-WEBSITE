@@ -1,6 +1,6 @@
 from django.test import SimpleTestCase
 from django.urls import reverse, resolve
-from account.views import dashboard
+from account.views import dashboard, register
 from django.contrib.auth import views as auth_views
 
 
@@ -20,3 +20,7 @@ class TestsUrls(SimpleTestCase):
     def test_logount(self):
         url = reverse('logout')
         self.assertEqual(resolve(url).func.view_class, auth_views.LogoutView)
+
+    def test_register(self):
+        url = reverse('register')
+        self.assertEqual(resolve(url).func, register)
