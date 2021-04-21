@@ -19,6 +19,8 @@
         {% if user.is_authenticated %}
         Welcome {{ user.username }}
         <a href="{% url 'logout' %}">log-out</a>.
+        You can <a href="{% url 'edit' %}">edit
+            your profile</a>
 
         <ul class="menu">
             <li {% if section == "dashboard" %}class="selected" {% endif %}>

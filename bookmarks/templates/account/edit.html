@@ -1,0 +1,12 @@
+{% extends 'account/base.html' %}
+{% block title %}Edit data{% endblock %}
+
+{% block content %}
+<h3>Edit Your account</h3>
+<form action="" method='POST' enctype="multipart/form-data">
+{% csrf_token  %}
+    {{ user_form.as_p }}
+    {{ profile_form.as_p }}
+    <p><input type="submit" name="" id="" value='Save changes'></p>
+</form>
+{% endblock %}
