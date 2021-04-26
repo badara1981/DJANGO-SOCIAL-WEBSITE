@@ -1,0 +1,19 @@
+{% extends 'maintenance/basehtml.html' %}
+
+{% block title %}Delete Room{% endblock title %}
+
+{% block content %}
+{% include 'maintenance/room_nav.html' %}
+
+<h2>Delete room: {{ rooms.name }}</h2>
+<form method="post">{% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Delete" id="room_button" class="btn btn-secondary form-control">
+</form>
+
+
+<script>
+    document.getElementById("id_name").classList.add("form-control");
+    document.getElementById("room_button").classList.add("form-control", "btn", "btn-success");
+</script>
+{% endblock content %}

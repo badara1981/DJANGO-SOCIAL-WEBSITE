@@ -1,0 +1,25 @@
+{% extends 'maintenance/basehtml.html' %}
+
+{% block content %}
+{% include 'maintenance/room_nav.html' %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>Total problem</th>
+        </tr>   
+    </thead>
+    {% for room in rooms %}
+    <tbody>
+        <td>{{ room.id }}</td>
+        <td>{{ room.name }}</td>
+        <td><a href="{% url 'maint:edit_room' room.pk %}" class="btn btn-secondary">Edit room {{ room.name }}</a></td>
+        <td><a href="{% url 'maint:delete_room' room.pk %}" class="btn btn-secondary">Delete room {{ room.name }}</a></td>
+        <td>{{ room.problems.count }}</td>
+    </tbody>
+    {% endfor %}
+</table>
+{% endblock content %}

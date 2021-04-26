@@ -14,7 +14,7 @@ class Rooms(models.Model):
 class Problem(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     message = models.TextField()
-    room_name = models.ForeignKey(Rooms, on_delete=models.CASCADE)
+    room_name = models.ForeignKey(Rooms, on_delete=models.CASCADE, related_name='problems')
     solve = models.BooleanField(default=False)
     date_publish = models.DateTimeField(default=datetime.datetime.now())
     date_solve = models.DateTimeField(blank=True, null=True)

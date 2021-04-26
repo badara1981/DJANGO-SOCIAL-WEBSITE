@@ -1,0 +1,16 @@
+{% extends 'maintenance/basehtml.html' %}
+
+{% block content %}
+{% include 'maintenance/room_nav.html' %}
+
+<form method="post">{% csrf_token %}
+    {{ form.name }}
+    <input type="submit" value="Update" id="room_button">
+</form>
+
+
+<script>
+    document.getElementById("id_name").classList.add("form-control");
+    document.getElementById("room_button").classList.add("form-control", "btn", "btn-success");
+</script>
+{% endblock content %}
