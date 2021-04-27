@@ -1,0 +1,24 @@
+{% extends 'maintenance/basehtml.html' %}
+{% block title %}All - Problems{% endblock title %}
+{% block content %}
+{% include 'maintenance/room_nav.html' %}
+
+<table class="table">
+    <tr>
+        <th>Поставил</th>
+        <th>Помещение</th>
+        <th>Проблем</th>
+        <th>Решен</th>
+        <th>Редакция</th>
+    </tr>
+{% for problem in problems %}
+    <tr>
+        <td>{{ problem.user }}: {{ problem.date_publish }}</td>
+        <td>{{ problem.room_name }}</td>
+        <td>{{ problem.message }}</td>
+        <td>{{ problem.solve }}</td>
+        <td><a href="{%url 'maint:edit_problem' problem.id %}">Редакция</a></td>
+    </tr>
+{% endfor %}
+</table>
+{% endblock content %}
