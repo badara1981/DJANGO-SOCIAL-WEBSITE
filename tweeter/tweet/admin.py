@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from . models import Publisher, City, Country, Author, Book
+from . models import Publisher, City, Country, Author, Tweet
 
 @admin.register(Publisher)
 class PublisherAdmin(admin.ModelAdmin):
@@ -20,7 +20,7 @@ class AuthorAdmin(admin.ModelAdmin):
     fields = 'first_name last_name email'.split()
     list_display = 'first_name last_name email'.split()
 
-@admin.register(Book)
-class BookAdmin(admin.ModelAdmin):
+@admin.register(Tweet)
+class TweetAdmin(admin.ModelAdmin):
     fields = 'title authors publication_date'.split()
 

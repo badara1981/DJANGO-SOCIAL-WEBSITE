@@ -46,17 +46,17 @@ class Author(models.Model):
 
 
 
-class BookManager(models.Manager):
+class TweetManager(models.Manager):
     def title_count(self, keyword):
         return self.filter(title__icontains=keyword).count()
 
 
-class Book(models.Model):
+class Tweet(models.Model):
     title = models.CharField(max_length=100)
     authors = models.ManyToManyField(Author, related_name='authors')
     publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)
     publication_date = models.DateField()
-    objects = BookManager()
+    objects = TweetManager()
 
 
     def __str__(self) -> str:

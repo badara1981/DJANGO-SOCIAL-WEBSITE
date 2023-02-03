@@ -21,9 +21,9 @@ class TestRegisterForm(TransactionTestCase):
     def test_form_with_valid_data(self):
         form = UserRegistrationForm(data={
             'username': 'username',
-            'first_name': 'borko',
-            'email': 'korea60@abv.bg',
-            'password': '123',
-            'password2': '123'
+            'first_name': 'badara',
+            'email': 'badara.jammeh@hotmail.com',
+            'password': 'bakau1981',
+            'password2': 'bakau1981'
         })
         self.assertTrue(form.is_valid())
